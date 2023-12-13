@@ -7,21 +7,26 @@ def main(message):
         model="gpt-3.5-turbo",
         messages=[{
             "role": "user",
-            "content": f"{message}"
+            "content": message
         }],
         stream=True,
     )
 
     for message in response:
-        print(message, flush=False, end='')
-        print('\n')
+        print(
+            message,
+            flush=True,  # для вывода в терминал сразу
+            end=''
+            )
 
 
 if __name__ == '__main__':
-    print("Модуль для вызова ChatGPT\n".upper())
+    print("✨ Программа для работы с ChatGPT\n\n".upper())
     try:
         while True:
-            request = input("🟢 Введите запрос: ")
+            request = input("✉️  Введите Ваш запрос: ")
+            print("\n💬 Ответ на Ваш запрос: ")
             main(request)
+            print('\n'*2)
     except KeyboardInterrupt:
-        print("\nПрерывание работы пользователем")
+        print("\n🔴 Прерывание работы пользователем")
