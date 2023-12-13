@@ -15,6 +15,7 @@ def main(message):
 
 
 if __name__ == '__main__':
+    print("Модуль для вызова ChatGPT\n".upper())
     while True:
         request = input("Введите запрос: ")
         main(request)
